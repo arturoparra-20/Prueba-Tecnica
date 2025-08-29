@@ -4,7 +4,7 @@ import documentRoutes from "./routes/document.routes";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Soporta payloads grandes (imágenes base64 en la descripción)
+
 app.use(express.json({ limit: "15mb" }));
 
 app.use("/document", documentRoutes);
