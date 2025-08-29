@@ -1,10 +1,12 @@
 import { Request, Response, NextFunction } from "express";
 import auth from "basic-auth";
 
-// Para la prueba técnica puedes dejarlo fijo o leer de variables de entorno
+// Usuario y contraseña por defecto
 const USERNAME = process.env.BASIC_USER || "admin";
 const PASSWORD = process.env.BASIC_PASS || "1234";
 
+
+// Middleware de autenticación básica
 export function basicAuth(req: Request, res: Response, next: NextFunction) {
   const user = auth(req);
   if (!user || user.name !== USERNAME || user.pass !== PASSWORD) {

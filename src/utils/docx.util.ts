@@ -5,6 +5,7 @@ export async function generateDocx(
   departamento: string,
   descripcionHtml: string
 ): Promise<Buffer> {
+    // Construye el contenido HTML para el documento incluyendo los parametros de la solicitud
   const htmlContent = `
     <div style="font-family: Arial, sans-serif; font-size: 12pt;">
       <h1 style="text-align:center; color:#0056b3;">${nombre}</h1>
@@ -13,6 +14,7 @@ export async function generateDocx(
     </div>
   `;
 
+  // Convierte el HTML a un Buffer .docx utilizando html-to-docx turbodocx
   try {
     const buffer = await htmlToDocx(htmlContent, "documento.docx", {
       table: { row: { cantSplit: true } },
