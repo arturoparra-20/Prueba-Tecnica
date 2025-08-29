@@ -54,4 +54,7 @@ Base64 (data:image/png;base64,...) → recomendado (funciona offline y siempre s
 Remote URLs (https://...) → pueden funcionar si la API puede descargarlas (y la URL responde con Content-Type: image/*). Si falla, el util intenta convertir la URL a dataURI antes de generar el docx.
 
 Tamaño: Si mandas imágenes grandes en base64, aumente el límite de body en index.ts (express.json({ limit: '15mb' }) o más).
+
+
+PSDT: En esta API se implementaron los requerimientos impuestos en el documento de la prueba tecnica, sin embargo se es consciente de que podian usarse otros tipos de validacion con jwt y otro endpoint que validara al usuario, por otro lado la implementacion de una interfaz visual(frontend) tambien facilitaria el manejo de la misma. 
    
